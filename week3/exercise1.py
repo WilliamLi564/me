@@ -49,14 +49,13 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    my_list = []
-    the_number = input("A number between low and high")
-    if the_number > low:
-        elif the_number < high:
-        my_list.append(a_number)
-    else print("Please enter a number in range")
-    return my_list
+    message = "Give me a number between {low}, and {high}: ".format(low=low, high=high)
 
+    while True:
+        input_number = int(message)    
+        if low < input_number < high:
+            print("Thanks! {} looks good.".format(input_number))
+    return input_number
 
 
 def not_number_rejector(message):
