@@ -65,7 +65,14 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+
+    while True:
+        input_number = int(raw_input(message))
+        print("{} looks good.".format(input_number))
+        return input_number
+    except Exception as e:
+        print("Please try again ({})".format(e))
+
 
 
 def super_asker(low, high):
@@ -76,7 +83,13 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    while True:
+        input_number = int(message)    
+        if low < input_number < high:
+            print("Thanks! {} looks good.".format(input_number))
+        return input_number
+    except Exception as e:
+        print("Please try again ({})".format(e))
 
 
 if __name__ == "__main__":
