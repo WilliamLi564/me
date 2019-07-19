@@ -1,0 +1,9 @@
+{
+    "username_me": "WilliamLi564",
+    "username_partner": "THEIRNAMEe",
+    "commit_me": "https://github.com/WilliamLi564/tf-pose-estimation/blob/master/src/assignment.py",
+    "commit_partner": "https://github.com/<YOUR-GITHUB>/tf-pose-estimation/commit/<thecommitSHA>",
+    "commit_coauthor": "https://github.com/<YOUR-GITHUB>/tf-pose-estimation/commit/<thecommitSHA>",
+    "screenshot_me": "https://github.com/WilliamLi564/tf-pose-estimation/blob/master/Hail%20Taxi%20Screen%20shot.png",
+    "screenshot_partner": "/path/to/partner/screenshot.jpg"
+  }
