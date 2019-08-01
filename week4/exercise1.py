@@ -34,9 +34,16 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
+    
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    last_Name = data["results"][0]["name"]["last"]
+    pass_word = data["results"][0]["login"]["password"]
+    post_code = data["results"][0]["location"]["postcode"]
+    the_ID = data["results"][0]["id"]["value"]
+    postcode_ID = int(post_code) + int(the_ID)
+
+
+    return {"lastName": last_Name, "password": pass_word, "postcodePlusID": postcode_ID}
 
 
 def wordy_pyramid():
@@ -93,11 +100,20 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(base=base, id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    tallest_pokemon_height = -1
+    tallest_pokemon = None
+    for pokeID in range(low, high):
+        url = template.format(id=pokeID)
+        r = requests.get(url)
+        if r.status_code is 200:
+            one_poke = r.json()
+            if one_poke["height"] > tallest_pokemon_height:
+                tallest_pokemon = one_poke
+                tallest_pokemon_height = one_poke["height"]
+    return {
+        "name": tallest_pokemon["name"], 
+        "weight": tallest_pokemon["weight"], 
+        "height": tallest_pokemon["height"]}
 
 
 def diarist():

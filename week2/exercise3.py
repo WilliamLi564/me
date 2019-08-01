@@ -141,10 +141,10 @@ def loops_4():
     ]
     """
     outter_list = []
-    for i in range(10):
+    for a in range (10):
         inner_list = []
-        for j in range(10):
-            inner_list.append(j)
+        for b in range (10):
+            inner_list.append(str(b))
         outter_list.append(inner_list)
     return outter_list
 
@@ -201,13 +201,13 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    the_wedge = []
+    outter_list = []
     for i in range(10):
-        row = []
+        inner_list = []
         for j in range(i+1):
-            row.append(j)
-        the_wedge.append(row)
-    return the_wedge
+            inner_list.append(str(j))
+        outter_list.append(inner_list)
+    return outter_list
 
 
 def loops_7():
