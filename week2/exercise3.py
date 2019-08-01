@@ -8,9 +8,9 @@ def is_odd(a_number):
     Look into modulo division using the '%' operator as one way of doing this.
     """
     if a_number % 2 == 0:
-        return a_number
+        return False
     else:
-        return a_number
+        return True
     
 
 
@@ -172,8 +172,14 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
 
+    number_square = []
+    for i in range(10):
+        coordinates_row = []
+        for j in range(5):
+            coordinates_row.append("(i" + str(i) + ", j" + str(j) + ")")
+        number_square.append(coordinates_row)
+    return number_square
 
 def loops_6():
     """Make a wedge of numbers.
@@ -195,13 +201,13 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    outter_list = []
+    the_wedge = []
     for i in range(10):
-        inner_list = []
-        for j in range(i):
-            inner_list.append(j + 1)
-        outter_list.append(inner_list)
-    return outter_list
+        row = []
+        for j in range(i+1):
+            row.append(j)
+        the_wedge.append(row)
+    return the_wedge
 
 
 def loops_7():
