@@ -52,10 +52,13 @@ def stubborn_asker(low, high):
     message = "Give me a number between {low}, and {high}: ".format(low=low, high=high)
 
     while True:
-        input_number = int(message)    
+        input_number = int(input(message))
         if low < input_number < high:
             print("Thanks! {} looks good.".format(input_number))
-    return input_number
+            return input_number
+        else:
+            print("{} is out of bounds!".format(input_number))
+    
 
 
 def not_number_rejector(message):
@@ -67,11 +70,12 @@ def not_number_rejector(message):
     """
 
     while True:
-        input_number = int(raw_input(message))
-        print("{} looks good.".format(input_number))
-        return input_number
-    except Exception as e:
-        print("Please try again ({})".format(e))
+        try:
+            input_number = int(input(message))
+            print("{} looks good.".format(input_number))
+            return input_number
+        except Exception as e:
+            print("Please try again ({})".format(e))
 
 
 
@@ -83,13 +87,15 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
+    message = "Give me a number between {low}, and {high}: ".format(low=low, high=high)
+    
     while True:
-        input_number = int(message)    
-        if low < input_number < high:
-            print("Thanks! {} looks good.".format(input_number))
-        return input_number
-    except Exception as e:
-        print("Please try again ({})".format(e))
+        try:
+            input_number = int(input(message))
+            print("{} looks good.".format(input_number))
+            return input_number
+        except Exception as e:
+            print("Please enter an integer!")
 
 
 if __name__ == "__main__":
