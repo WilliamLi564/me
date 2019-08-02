@@ -44,16 +44,16 @@ def fizz_buzz():
     if it is. E.g. [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, ...]
     """
     fizzBuzzList = []
-    for i in range(1, 100):
+    for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
-            return "FizzBuzz"
+            fizzBuzzList.append("FizzBuzz")
         elif i % 3 == 0:
-            return "Fizz"
+            fizzBuzzList.append("Fizz")
         elif i % 5 == 0:
-            return "Buzz"
+            fizzBuzzList.append("Buzz")
         else:
-            return  i
-    fizzBuzzList.append(i)
+            fizzBuzzList.append(i)
+
 
     
     # your code here
@@ -71,8 +71,9 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
+    string_join = "|" + '|'.join(input_string) + "|"
 
-    return ""
+    return string_join
 
 
 def pet_filter(letter="a"):
@@ -88,8 +89,9 @@ def pet_filter(letter="a"):
             "siamese fighting fish","fancy rat and lab rat","mink","red fox",
             "hedgehog","guppy",]
     # fmt: on
+    result =[k for k in pets if letter in k]
 
-    return []
+    return result
 
 
 def best_letter_for_pets():
