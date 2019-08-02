@@ -170,9 +170,9 @@ def fast_filler(number_of_words=200):
 
     If you get this one to work, you are a Very Good Programmer™!
     """
-
+'''
     return paragraph
-
+'''
 
 if __name__ == "__main__":
     print("greet:", greet())
