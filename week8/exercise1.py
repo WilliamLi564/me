@@ -102,8 +102,13 @@ def best_letter_for_pets():
     import string
 
     the_alphabet = string.ascii_lowercase
+    length = 0
+    for i in the_alphabet:
+        if len(pet_filter(i)) > length:
+            new_letter = i
+            length = len(pet_filter(i))
 
-    return ""
+    return new_letter
 
 
 def make_filler_text_dictionary():
